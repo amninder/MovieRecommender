@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js">
+</script>
+<script>
+$(document).ready(function(){
+  $.getJSON( "{{STATIC_URL}}result.json", function( data ) {
+  var similar_movies = [];
+  var movies = []
+  $.each( data, function( key, val ) {
+    similar_movies.push( "<div id='" + key + "'>" + key + "</div>" );
+  });
+ 
+  $( "<ul/>", {
+    "class": "my-new-list",
+    html: similar_movies.join( "" )
+  }).appendTo( "body" );
+});
+});
+</script>
+</head>
+<body>
+<div id="testfield"></div>
+</body>
+</html>

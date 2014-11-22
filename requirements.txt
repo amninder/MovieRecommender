@@ -7,3 +7,13 @@ psycopg2==2.5.2
 pystache==0.5.3
 static==1.0.2
 wsgiref==0.1.2
+Cython==0.20.1
+Divisi2==2.2.5
+csc-pysparse==1.1.1.4
+csc-utils==0.6.7
+networkx==1.8.1
+numpy==1.8.1
+git+https://github.com/ocelma/python-recsys.git
+scipy==0.13.3
+sparsesvd==0.2.2
+wsgiref==0.1.2

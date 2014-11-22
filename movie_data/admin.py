@@ -16,5 +16,5 @@ admin.site.register(Genre, GenreAdmin)
 
 class MovieAdmin(admin.ModelAdmin):
     list_display = ('pk', 'movie_id', 'title',)
-    list_filter  = ('title',)
+    # list_filter  = ('title',)
 admin.site.register(Movie, MovieAdmin)

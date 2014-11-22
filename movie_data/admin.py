@@ -1,16 +1,20 @@
 __author__ = 'narota'
 from django.contrib import admin
-from movie_data.models import Genere
+from movie_data.models import Genre
+from movie_data.models import Movie
 
-
-def get_generes(GenereAdmin, request, queryset):
+def get_genres(GenereAdmin, request, queryset):
     print "Custom Action"
-get_generes.short_description = "Load data from 'movies.dat'"
+get_genres.short_description = "Load data from 'movies.dat'"
 
-class GenereAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'genere',)
-    list_filter  = ('genere',)
-    actions      = [get_generes]
+class GenreAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'genre',)
+    list_filter  = ('genre',)
+    actions      = [get_genres]
+admin.site.register(Genre, GenreAdmin)
 
 
-admin.site.register(Genere, GenereAdmin)
+class MovieAdmin(admin.ModelAdmin):
+    list_display = ('pk', 'movie_id', 'title',)
+    list_filter  = ('title',)
+admin.site.register(Movie, MovieAdmin)

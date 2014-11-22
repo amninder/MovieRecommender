@@ -1,5 +1,14 @@
 from django.db import models
 
 
-class Genere(models.Model):
-    genere = models.CharField(max_length=100)
+class Genre(models.Model):
+    genre = models.CharField(max_length=100)
+    def __unicode__(self):
+        return self.genre
+
+class Movie(models.Model):
+    movie_id = models.PositiveIntegerField('MovieID')
+    title = models.CharField('Title',max_length=100)
+    genres = models.ManyToManyField(Genre)
+    def __unicode__(self):
+        return self.movie_id
